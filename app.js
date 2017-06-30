@@ -42,13 +42,13 @@ fs.readFile(__dirname + '/data/api.txt', {flag: 'r+', encoding: 'utf8'}, functio
     var reg = "END\n";
     var api_array = data.split(reg);
     api_array.map(function(item){
-    	api_item = item.split(" ");
-    	if(api_item.length==2){
-    		console.log("url:"+api_item[0]+" json:"+api_item[1]);
-    		app.all(api_item[0], function(req,res){
-				res.json(JSON.parse(api_item[1]));
-			})
-    	}
+    	var index = item.indexOf(" {");
+    	var url = item.substring(0,index);
+    	var json = item.substring(index+1,item.length);
+    	console.log("url:"+url+" json:"+json);
+    	app.all(url, function(req,res){
+			res.json(JSON.parse(json));
+		})
     })
 });
 
