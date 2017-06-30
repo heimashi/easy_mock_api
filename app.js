@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var reactViews = require('express-react-views');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
@@ -23,10 +24,32 @@ app.get('/api/list', function (req, res, next) {
 });
 
 app.post('/api/post', function(req, res, next){
+	fs.appendFile(__dirname + '/data/api.txt', "END\n"+req.body.url_path+" "+req.body.json_text, function () {
+  		console.log('add success');
+	});
 	app.all(req.body.url_path, function(req1,res1){
 		res1.json(JSON.parse(req.body.json_text));
 	})
 	res.send("success! url:"+req.body.url_path);
+});
+
+fs.readFile(__dirname + '/data/api.txt', {flag: 'r+', encoding: 'utf8'}, function (err, data) {
+    if(err) {
+     console.error(err);
+     return;
+    }
+    console.log(data);
+    var reg = "END\n";
+    var api_array = data.split(reg);
+    api_array.map(function(item){
+    	api_item = item.split(" ");
+    	if(api_item.length==2){
+    		console.log("url:"+api_item[0]+" json:"+api_item[1]);
+    		app.all(api_item[0], function(req,res){
+				res.json(JSON.parse(api_item[1]));
+			})
+    	}
+    })
 });
 
 
@@ -54,8 +77,5 @@ for(var path in path_result_map){
 }
 
 var server = app.listen(3000, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('app listening at http://%s:%s', host, port);
+  console.log('app listening at post 3000');
 });
