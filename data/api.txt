@@ -1,6 +1,2 @@
-/p1/aa {"data":"hhh","status":1}END
-/p2/a {"data":"hhh","status":2}END
-/a {"abc":"1"}END
-/aaa {"a":"bb"}END
-/aaaa/b {"aa":"bb"}END
-/a/b/c [object Object]
+/path1/aa {"data":"hhh","status":1}END
+/aa/bb/cc {"key1":"value","key2":1}
