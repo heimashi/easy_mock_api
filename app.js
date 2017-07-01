@@ -94,7 +94,7 @@ app.post('/api/post', function(req, res, next){
 
 	if(url_path in url_json_list){
 		url_json_list[url_path]=json_text;
-		//TODO
+		//TODO UPDATE FILE
 
 	}else{
 		var jsonStr = JSON.stringify(JSON.parse(json_text));
@@ -108,11 +108,8 @@ app.post('/api/post', function(req, res, next){
 	app.all(url_path, function(req1,res1){
 		res1.json(JSON.parse(json_text));
 	})
-	//res.send("add success!\nurl: "+url_path);
 	res.render('api_tips', { title:'TIPS',msg: "add success!", url:url_path});
 });
-
-
 
 var server = app.listen(3000, function () {
   console.log('app listening at post 3000');
