@@ -8,9 +8,9 @@ var HelloMessage = React.createClass({
         <div>
         	<h1>接口录入页面</h1>
 	        <form action="/api/post" method="post">
-	        	<p>URL :<input name="url_path" type="text"/></p>
-	        	<p>JSON:<textarea name="json_text" rows="10" cols="30"/></p>
-	        	<input type="submit" value="提交"/>
+	        	<p>URL :</p><input name="url_path" type="text" style={{ width:'400px', height:'30px'}}/>
+	        	<p>JSON:</p><textarea name="json_text" rows="20" cols="100"/>
+	        	<br/><input type="submit" value="提交"  style={{fontSize:'35px', width:'100px', height:'50px'}}/>
 	        </form>
 	        <br/>
           <h3>提示:</h3>

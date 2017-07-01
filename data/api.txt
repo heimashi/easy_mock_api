@@ -1,2 +1,3 @@
 /path1/aa {"data":"hhh","status":1}END
-/aa/bb/cc {"key1":"value","key2":1}
+/aa/bb/cc {"key1":"value","key2":1}END
+/aa {}

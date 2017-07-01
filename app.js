@@ -78,23 +78,22 @@ app.get('/api/list', function (req, res, next) {
 
 app.post('/api/post', function(req, res, next){
 	if(req.body.url_path==null||req.body.json_text==null){
-		res.send("url and json can not be null");
+		res.render('api_tips', { title:'TIPS',msg: "url and json can not be null"});
 		return
 	};
 	var url_path = req.body.url_path.trim().toLowerCase();
 	var json_text = req.body.json_text.trim();
 	if(!is_valid_url(url_path)){
-		res.send("error url!\nurl: "+url_path);
+		res.render('api_tips', { title:'TIPS',msg: "error url!\nurl: "+url_path});
 		return
 	}
 	if(!is_valid_json(json_text)){
-		res.send("error json!\njson: "+json_text);
+		res.render('api_tips', { title:'TIPS',msg: "error json!\njson: "+json_text});
 		return
 	}
 
 	if(url_path in url_json_list){
 		url_json_list[url_path]=json_text;
-		url_list.push(url_path);
 		//TODO
 
 	}else{
@@ -109,7 +108,8 @@ app.post('/api/post', function(req, res, next){
 	app.all(url_path, function(req1,res1){
 		res1.json(JSON.parse(json_text));
 	})
-	res.send("add success!\nurl: "+url_path);
+	//res.send("add success!\nurl: "+url_path);
+	res.render('api_tips', { title:'TIPS',msg: "add success!", url:url_path});
 });
 
 
