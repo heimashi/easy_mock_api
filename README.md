@@ -23,4 +23,12 @@
 ## 配置相关
 * 配置端口号 项目默认是3000端口，如想配置成其他端口号请修改app.js里的倒数第三行 app.listen(3000, function ()...
 
+## [案例](http://45.62.98.137)
+* 接口录入页面
+	* 分别录入url和对应的json 其中url不要带协议和主机名，例如http://www.test.com/app/ask接口的话，URL项只填写/app/ask
 
+![image](http://github.com/heimashi/easy_mock_api/raw/master/imgs/img_01_example.jpg)
+
+* 结果测试页面
+
+![image](http://github.com/heimashi/easy_mock_api/raw/master/imgs/img_02_example.jpg)
