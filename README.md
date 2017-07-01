@@ -12,7 +12,7 @@
 * git clone git@github.com:heimashi/easy_mock_api.git
 * npm install
 * npm start  
-  Done! 访问http://localhost
+  Done! 访问 http://localhost
  
 * 如果在生产环境中部署应用，可以采用[forever](https://github.com/foreverjs/forever)工具,步骤是：
   * git clone git@github.com:heimashi/easy_mock_api.git
@@ -23,12 +23,12 @@
 ## 配置相关
 * 配置端口号 项目默认是3000端口，如想配置成其他端口号请修改app.js里的倒数第三行 app.listen(3000, function ()...
 
-## [案例](http://45.62.98.137)
+## 效果展示 [案例](http://45.62.98.137)
 * 接口录入页面
-	* 分别录入url和对应的json 其中url不要带协议和主机名，例如http://www.test.com/app/ask接口的话，URL项只填写/app/ask
+	* 分别录入url和对应的json 其中url不要带协议和主机名，例如像 http://www.test.com/app/ask 接口的话，URL项只填写/app/ask
 
-![image](http://github.com/heimashi/easy_mock_api/raw/master/imgs/img_01_example.jpg)
+![image](https://github.com/heimashi/easy_mock_api/blob/master/imgs/img_01_example.png)
 
 * 结果测试页面
 
-![image](http://github.com/heimashi/easy_mock_api/raw/master/imgs/img_02_example.jpg)
+![image](https://github.com/heimashi/easy_mock_api/blob/master/imgs/img_02_example.png)
