@@ -36,6 +36,10 @@ function is_valid_url(url) {
 	return true;
 }
 
+function is_reserved_url(url){
+	return url=="/"||url=="/api"||url=="/api/post"||url=="/api/list";
+}
+
 function is_valid_json(data) {
 	if(data==null||data=="") return false;
 	try{
@@ -87,6 +91,12 @@ app.post('/api/post', function(req, res, next){
 		res.render('api_tips', { title:'TIPS',msg: "error url!\nurl: "+url_path});
 		return
 	}
+
+	if(is_reserved_url(url_path)){
+		res.render('api_tips', { title:'TIPS',msg: "url is reserved! url cannot be [/, /api, /api/post, /api/list]"});
+		return
+	}
+
 	if(!is_valid_json(json_text)){
 		res.render('api_tips', { title:'TIPS',msg: "error json!\njson: "+json_text});
 		return
