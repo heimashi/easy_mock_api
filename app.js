@@ -66,7 +66,7 @@ fs.readFile(__dirname + '/data/api.txt', {flag: 'r+', encoding: 'utf8'}, functio
     			url_json_list[url]=json;
     			url_list.push(url);
     			app.all(url, function(req,res){
-					res.json(JSON.parse(json));
+					res.json(JSON.parse(url_json_list[url]));
 				})
     		}
     	}
