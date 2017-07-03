@@ -1,7 +1,8 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var DefaultLayout = require('./layouts/default');
 
-var HelloMessage = React.createClass({
+var ApiPostPage = createReactClass({
   render: function() {
     return (
       <DefaultLayout title={this.props.title}>
@@ -23,4 +24,4 @@ var HelloMessage = React.createClass({
   }
 });
 
-module.exports = HelloMessage;
+module.exports = ApiPostPage;

@@ -1,6 +1,7 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var DefaultLayout = React.createClass({
+var DefaultLayout = createReactClass({
   render: function() {
     return (
       <html>

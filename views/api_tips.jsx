@@ -1,7 +1,8 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var DefaultLayout = require('./layouts/default');
 
-var HelloMessage = React.createClass({
+var ApiTipsPage = createReactClass({
   
   render: function() {
   	var item;
@@ -26,4 +27,4 @@ var HelloMessage = React.createClass({
   }
 });
 
-module.exports = HelloMessage;
+module.exports = ApiTipsPage;

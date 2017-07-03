@@ -1,12 +1,12 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var DefaultLayout = require('./layouts/default');
-  
 
-var HelloMessage = React.createClass({
+var ApiListPage = createReactClass({
   render: function() {
   	var items = this.props.json_list.map(function (item) {
             return (
-                <li>
+                <li key={item.toString()}>
                     <a href={item}>{ item }</a>
                 </li>
                 );
@@ -23,4 +23,4 @@ var HelloMessage = React.createClass({
   }
 });
 
-module.exports = HelloMessage;
+module.exports = ApiListPage;

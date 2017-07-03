@@ -1,6 +1,8 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var DefaultLayout = require('./layouts/default');
-var HelloMessage = React.createClass({
+
+var RootPage = createReactClass({
   
   render: function() {
     return (
@@ -16,4 +18,4 @@ var HelloMessage = React.createClass({
   
 });
 
-module.exports = HelloMessage;
+module.exports = RootPage;
