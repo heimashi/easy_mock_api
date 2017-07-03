@@ -113,11 +113,12 @@ app.post('/api/post', function(req, res, next){
 		fs.appendFile(__dirname + '/data/api.txt', "END\n"+url_path+" "+jsonStr, function () {
 		  	console.log('add success:'+req.body.url_path);
 		});
+		app.all(url_path, function(req1,res1){
+			res1.json(JSON.parse(url_json_list[url_path]));
+		})
 	}
 	
-	app.all(url_path, function(req1,res1){
-		res1.json(JSON.parse(json_text));
-	})
+	
 	res.render('api_tips', { title:'TIPS',msg: "add success!", url:url_path});
 });
 
