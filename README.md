@@ -12,7 +12,7 @@
 * git clone git@github.com:heimashi/easy_mock_api.git
 * npm install
 * npm start  
-  Done! 访问 http://localhost
+  Done! 访问 http://localhost:3000
  
 * 如果在生产环境中部署应用，可以采用[forever](https://github.com/foreverjs/forever)工具,步骤是：
   * git clone git@github.com:heimashi/easy_mock_api.git
