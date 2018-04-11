@@ -1,6 +1,6 @@
 # easy_mock_api
 
-给客户端（Android iOS）同学的模拟json接口的小工具 [详见案例](http://45.62.98.137)
+给客户端（Android iOS）同学的模拟json接口的小工具
 
 用nodejs（express+react）搭建的极简的服务器，给定一个url就返回一个特定的Json数据，提供给客户端开发同学用的模拟Json服务器接口的项目，项目尽可能的简单，核心代码只有100多行，简单而实用，方便扩展。
 
@@ -23,7 +23,7 @@
 ## 配置相关
 * 配置端口号 项目默认是3000端口，如想配置成其他端口号请修改app.js里的倒数第三行 app.listen(3000, function ()...
 
-## 效果展示 [案例](http://45.62.98.137)
+## 效果展示 
 * 接口录入页面
 	* 分别录入url和对应的json 其中url不要带协议和主机名，例如像 http://www.test.com/app/ask 接口的话，URL项只填写/app/ask
 
